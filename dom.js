@@ -27,9 +27,12 @@ $("#trans-btn").click(function(e) {
   } else if (language === "italian") {
     var thing = Translator.translateToItalian(text);
     console.log(thing);
+
   }
-    // console.log("trans-btn", trans-btn);
+  $("#results").html(thing);
  })
+
+
  
 // });
 

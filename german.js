@@ -1,5 +1,5 @@
 
-var translator = (function (){
+var Translator = (function (){
 	var holidayMsg = {
 		"merry": "Frohe",
 		"christmas": "Weihnachten",
@@ -33,18 +33,18 @@ var translator = (function (){
 		}
 	}
 
-}) ({});
+}) (Translator);
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-	var retrievedMsgInputs; 
+// 	var retrievedMsgInputs; 
 
-	$("#trans-btn").click(function () {
-    	retrievedMsgInputs = $("#input").val();
- 		console.log("input msg", retrievedMsgInputs);
- 		translator.translateToGerman(retrievedMsgInputs);
-	});
+// 	$("#trans-btn").click(function () {
+//     	retrievedMsgInputs = $("#input").val();
+//  		console.log("input msg", retrievedMsgInputs);
+//  		Translator.translateToGerman(retrievedMsgInputs);
+// 	});
 
-});
+// });
 
 
