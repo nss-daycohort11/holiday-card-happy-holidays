@@ -1,3 +1,4 @@
+
 // private interface, no one can change //
 
 var Translator = (function () {
@@ -7,6 +8,9 @@ var Translator = (function () {
 
     }
   })();
+
+
+
 
 
 
