@@ -1,8 +1,12 @@
-$document.ready(function);
+
+  var dropdown = $("option[value='italian']");
+  var words = $("#input").val();
+
+
 
 // private interface, no one can change //
 
-var translator = (function () {
+var Translator = (function () {
     var holidayMsg = {
         "merry": "Joyeux",
         "christmas": "noel",
@@ -30,6 +34,9 @@ var translator = (function () {
     	}
     }
 })();
+
+
+
 
 
 
