@@ -1,6 +1,5 @@
-$(document).ready(function() {
 
-var translator = function (){
+var translator = (function (){
 	var holidayMsg = {
 		"merry": "Frohe",
 		"christmas": "Weihnachten",
@@ -10,33 +9,42 @@ var translator = function (){
 		"new": "neues",
 		"year": "Jahr"
 	}
-
+			
 	return {
-		translateToGerman: function (message) {
-			message = document.getElementById("input").value; 
-  			message = message.replace(/merry/g, "Frohe"); 
-  			message = message.replace(/christmas/g, "Weihnachten"); 
-  			message = message.replace(/and/g, "und"); 
-  			message = message.replace(/a/g, "ein"); 
-  			message = message.replace(/happy/g, "gutes"); 
-  			message = message.replace(/new/g, "neues"); 
-  			message = message.replace(/year/g, "Jahr"); 
 
-  			document.getElementById("german-trans").value = message;
+		translateToGerman: function(message) {
+			console.log(message);	
+  			//First, split input text string into an array.
+  			var translateMsg = message.split(" ");
+  			//Second, declare a variable for new string.
+  			var translatedString = "";
+  			//Third, use a 'for' loop to cycle through the array.
+  			for (var i = 0; i < translateMsg.length; i++) {
+  				//Fourth, declare variable to capture the current word.
+  				var currentWord = translateMsg[i];
+  				//Fifth, concatenate the words after extracting the corresponding object key from the holidayMsg {}.
+  				translatedString += " " + holidayMsg[currentWord];
 
-			return message;
-			console.log("translateToGerman", translateToGerman);
+  			};
+			
+			console.log("translatedString", translatedString);
+			//Lastly, return the concatenated string.
+			return translatedString;
 		}
 	}
 
-} ();
+}) ({});
 
-});
+$(document).ready(function() {
 
-$(".enter-btn").click(function retrieveNumInput() {
-    var retrievedNumInputs = $(".num-input").val().split(","); //makes an array inside html
+	var retrievedMsgInputs; 
 
- 	console.log(retrievedNumInputs);
+	$("#trans-btn").click(function () {
+    	retrievedMsgInputs = $("#input").val();
+ 		console.log("input msg", retrievedMsgInputs);
+ 		translator.translateToGerman(retrievedMsgInputs);
+	});
+
 });
 
 
