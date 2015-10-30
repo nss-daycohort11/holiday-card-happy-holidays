@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Happy Holidays!</title>
-	<meta lang="en">
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css">
-</head>
-<body>
+	<head>
+		<title>Happy Holidays!</title>
+		<meta lang="en">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
 
-<!-- where you enter your greeting in english -->
+		<div id="container">
 
-	<textarea id="input"></textarea>
+			<h1>Enter A Holiday Message and Choose A Target Language</h1>
+			<!-- where you enter your greeting in english -->
+			<textarea id="input"></textarea>
 
-<!-- button for translation -->
+			<!-- languages to choose from -->
+			<div id="selection">
+				<select id="language">
+					<option name="language" value="german">German</option>
+					<option name="language" value="italian">Italian</option>
+					<option name="language" value="french">French</option>
+				</select>
+			</div>
 
-	<button id="trans-btn">Translate</button>
+			<!-- button for translation -->
+			<div>
+				<button id="trans-btn">Translate</button>
+			</div>
 
-<!-- languages to choose from -->
+			<!-- div for results of translation -->	
+  			<div id="results"></div>
 
-
-	<div id="selection">
-		<select id="language">
-			<option name="language" value="german">German</option>
-			<option name="language" value="italian">Italian</option>
-			<option name="language" value="french">French</option>
-		</select>
-	</div>
-
-  <div id="results"></div>
+  		</div>
 
 
-<!-- start of script -->
-
-
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="translate.js"></script>
-  <script src="german.js"></script>
-  <script src="italian.js"></script>
-  <script src="french.js"></script>
-  <script src="dom.js"></script>
+		<!-- start of script -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="translate.js"></script>
+	  	<script src="german.js"></script>
+	  	<script src="italian.js"></script>
+	  	<script src="french.js"></script>
+	  	<script src="dom.js"></script>
 	</body>
-	</html>
+</html>
